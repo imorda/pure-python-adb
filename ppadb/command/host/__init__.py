@@ -70,7 +70,7 @@ class Host(Command):
         device_forward_map = {}
         for line in result.split('\n'):
             if line:
-                serial, local, remote = line.split()
+                serial, local, remote = line.rsplit(' ', 2)
                 if serial not in device_forward_map:
                     device_forward_map[serial] = {}
 
